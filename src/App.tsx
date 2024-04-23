@@ -1,39 +1,37 @@
 import BulletinList from "./components/BulletinList";
 import NavList from "@/components/NavList.tsx";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+// import required modules
+import { Autoplay, EffectFade } from "swiper/modules";
 
 function App() {
   return (
     <>
-      <Carousel
-        className="w-full"
-        opts={{
-          align: "start",
-          loop: true,
-        }}
-        plugins={[
-          Autoplay({
-            delay: 2000,
-          }),
-        ]}
+      <Swiper
+        effect={"fade"}
+        autoplay={{ delay: 2500 }}
+        loop={true}
+        modules={[EffectFade, Autoplay]}
       >
-        <CarouselContent>
-          {Array.from({ length: 5 }).map((_, index) => (
-            <CarouselItem key={index}>
-              <img
+        {Array.from({ length: 5 }).map((_, index) => (
+          <SwiperSlide key={index}>
+            <img src={`https://picsum.photos/2000/1000?${index}`} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      {/* <img
+                id="carousel"
                 className="w-full h-[40vh] object-cover"
-                src={`https://picsum.photos/2000/1000?${index}`}
+                src={`https://picsum.photos/2000/1000?${1}`}
                 alt=""
-              />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
+              /> */}
       <div className="grid grid-cols-3 gap-4 m-4">
         <div className="flex flex-col gap-4">
           <span className="text-lg font-bold">最新公告</span>
@@ -47,7 +45,7 @@ function App() {
             </p>
             <img
               src="https://picsum.photos/id/182/150/180"
-              className="rounded-lg"
+              className="rounded-lg transition-opacity duration-1000 opacity-0"
               alt=""
             />
           </div>
