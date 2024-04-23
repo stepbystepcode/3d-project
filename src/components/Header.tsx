@@ -1,20 +1,58 @@
-import Logo from '../assets/logo.svg'
+import Logo from '../assets/logo.svg';
+import { NavLink } from 'react-router-dom';
+
+const List = [
+    {
+        id: 1,
+        title: '首页',
+        path: '/'
+    },
+    {
+        id: 2,
+        title: '虚拟城市',
+        path: '/city'
+    },
+    {
+        id: 3,
+        title: '创客空间',
+        path: '/space'
+    },
+    {
+        id: 4,
+        title: '网络社区',
+        path: '/community'
+    },
+    {
+        id: 5,
+        title: '关于我们',
+        path: '/about'
+    }
+];
+
 const Header = () => {
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur-lg">
             <div className="container flex h-14 max-w-screen-2xl items-center">
                 <div className="flex grow justify-between">
                     <img src={Logo} alt="logo" />
-                    <nav className={'flex items-center gap-4 text-sm lg:gap-6'}>
-                    <a href={'/'} className="transition-colors hover:text-foreground/80 text-foreground/60">首页</a>
-                    <a href={'/city'} className="transition-colors hover:text-foreground/80 text-foreground/60">虚拟城市</a>
-                    <a href={'/space'} className="transition-colors hover:text-foreground/80 text-foreground/60">创客空间</a>
-                    <a href={'/community'} className="transition-colors hover:text-foreground/80 text-foreground/60">网络社区</a>
-                    <a href={'/about'} className="transition-colors hover:text-foreground/80 text-foreground/60">关于我们</a>
+                    <nav className="flex items-center gap-4 text-sm lg:gap-6">
+                        {List.map((item) => (
+                            <NavLink
+                                key={item.id}
+                                to={item.path}
+                                className={({ isActive }) => 
+                                    `font-bold transition-colors text-foreground/60 ${isActive ? 'text-green-500' : 'hover:text-foreground/80'}`
+                                }
+                                
+                            >
+                                {item.title}
+                            </NavLink>
+                        ))}
                     </nav>
                 </div>
             </div>
         </header>
-    )
+    );
 }
+
 export default Header;
