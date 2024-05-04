@@ -20,6 +20,7 @@ function Space() {
           <Model />
           <OrbitControls />
           <Environment preset="sunset" background />
+          {/* <Environment path="/hdri/" files="venice_sunset_1k.hdr" /> */}
         </Suspense>
       </Canvas>
     </div>

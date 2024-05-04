@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
-    "@react-three/drei": "^9.105.5",
+    "@react-three/drei": "9.77.11-canary-branches.1",
     "@react-three/fiber": "^8.16.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
