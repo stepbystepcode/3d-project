@@ -14,7 +14,7 @@ import { Autoplay, EffectFade } from "swiper/modules";
 
 function App() {
   return (
-    <>
+    <div>
     <div className="flex">
       <Swiper
         className="flex-1"
@@ -58,7 +58,7 @@ function App() {
           <BulletinList />
         </div>
         <div className="flex flex-col gap-4">
-          <span className="text-lg font-bold">关于我们</span>
+          <span className="text-lg font-bold">平台简介</span>
           <div className="flex">
             <p className="p-2">
               “城市空间仿真设计与数字互动平台”是B/S架构的虚拟仿真技术平台，主要为建筑学专业领域的工程师、设计师、高校师生及科研人员等，提供城市规划设计、建筑设计、工程设计方案的创作及研讨服务。
@@ -74,7 +74,7 @@ function App() {
           <span className="text-lg font-bold">导航</span> <NavList />
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -2,17 +2,17 @@ import { ArrowRight } from 'lucide-react';
 const fakeData = [
     {
         id: 1,
-        title: '虚拟城市',
+        title: '虚拟城市漫游',
         link: '/city'
     },
     {
         id: 2,
-        title: '创客空间',
+        title: '在线设计与发布',
         link: '/space'
     },
     {
         id: 3,
-        title: '网络社区',
+        title: '学术交流与共享',
         link: '/community'
     }
 
