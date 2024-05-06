@@ -77,8 +77,8 @@ function App() {
               </p>
             </span>
             <img
-              src="182-150x180.jpg"
-              className="rounded-lg transition-opacity duration-1000 min-w-[230px]"
+              src="/images/3.jpg"
+              className="object-cover rounded-lg transition-opacity duration-1000 min-w-[230px]"
               alt=""
             />
           </div>
